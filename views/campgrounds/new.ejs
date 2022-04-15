@@ -1,0 +1,51 @@
+<% layout('/layouts/boilerplate') %>
+<div class="row image-upload">
+
+    <div class="col-md-6 offset-md-3">
+        <h1>New Campground</h1>
+        <div class="card shadow">
+            <div class="card-body">
+                <form action="/campgrounds" method="post" novalidate class="validated-form"
+                    enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label" for="title">Title</label>
+                        <input class="form-control" type="text" name="campground[title]" id="title"
+                            placeholder="eg. Forest Creek" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="location">Location</label>
+                        <input class="form-control" type="text" name="campground[location]" id="location"
+                            placeholder="eg. Keller, Texas" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="price">Price</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="price-label">$</span>
+                            <input type="text" class="form-control" placeholder="0.00" aria-label="price" id="price"
+                                aria-describedby="price-label" name="campground[price]" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="description">Description</label>
+                        <textarea class="form-control" type="text" name="campground[description]" id="image"
+                            required></textarea>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" name="image" id="imageInput" multiple>
+                    </div>
+                    <div class="mb-3 d-flex flex-wrap" id="image-preview">
+                        <ul id="image-file-list">
+
+                        </ul>
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+                <div class="mb-5">
+                    <a href="/campgrounds">Back to All Campgrounds</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
